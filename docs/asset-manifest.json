@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.50af8a79.css",
+    "main.js": "/static/js/main.84eb648a.js",
+    "static/media/background.mp4": "/static/media/background.8dc10b76d33595f8b7e6.mp4",
+    "static/media/certifications-active.png": "/static/media/certifications-active.2920c926fc7bfb2510c3.png",
+    "static/media/certifications-hover.png": "/static/media/certifications-hover.2920c926fc7bfb2510c3.png",
+    "static/media/experience-active.png": "/static/media/experience-active.bed1085005228546f91f.png",
+    "static/media/experience-hover.png": "/static/media/experience-hover.bed1085005228546f91f.png",
+    "static/media/education-active.png": "/static/media/education-active.a17683082411cae7c98d.png",
+    "static/media/education-hover.png": "/static/media/education-hover.a17683082411cae7c98d.png",
+    "static/media/about-active.png": "/static/media/about-active.f22107d3255563a7c827.png",
+    "static/media/about-hover.png": "/static/media/about-hover.f22107d3255563a7c827.png",
+    "static/media/certifications-default.png": "/static/media/certifications-default.fe5cade909824a322aae.png",
+    "static/media/experience-default.png": "/static/media/experience-default.e9213fb83466984d9834.png",
+    "static/media/education-default.png": "/static/media/education-default.b6a9f01af6b6cc229784.png",
+    "static/media/about-default.png": "/static/media/about-default.956fa8de2f09a1805e72.png",
+    "static/media/enter-default.png": "/static/media/enter-default.79e5cc576813a8794340.png",
+    "static/media/enter-active.png": "/static/media/enter-active.5cc28eeb9868ecc91918.png",
+    "static/media/enter-hover.png": "/static/media/enter-hover.5cc28eeb9868ecc91918.png",
+    "index.html": "/index.html",
+    "main.50af8a79.css.map": "/static/css/main.50af8a79.css.map",
+    "main.84eb648a.js.map": "/static/js/main.84eb648a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50af8a79.css",
+    "static/js/main.84eb648a.js"
+  ]
+}
