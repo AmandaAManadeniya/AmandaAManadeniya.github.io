@@ -1,0 +1,79 @@
+.flip-card-wrapper {
+  width: 200px;
+  height: 200px;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card.flipped {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  z-index: 1000;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--section-bg);
+  border: 1px solid var(--accent-cyan);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+.flip-card-front {
+  justify-content: center;
+}
+
+.flip-card-back {
+  justify-content: flex-start;
+  padding: 24px;
+  box-sizing: border-box;
+  display: none;
+}
+
+.flip-card.flipped .flip-card-front {
+  display: none;
+}
+
+.flip-card.flipped .flip-card-back {
+  display: flex;
+}
+
+.flip-card h2 {
+  margin: 0 0 16px;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-neon);
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+}

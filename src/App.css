@@ -1,0 +1,310 @@
+:root {
+  --bg-dark: #0d0d1a;
+  --accent-cyan: #00ffff;
+  --accent-neon: #e7efe6;
+  --text-light: #e0e0e0;
+  --section-bg: var(--bg-dark);
+}
+
+/* Reset & base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body, #root {
+  height: 100%;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Rajdhani', sans-serif;
+  overflow: hidden;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scene-container {
+  flex: 1;
+  position: relative;
+  background: radial-gradient(circle at top left, var(--bg-dark), #000814);
+  overflow: hidden;
+}
+
+/* Background video */
+.bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  z-index: 2;
+}
+.bg-video.hidden { opacity: 0; pointer-events: none; }
+
+/* Enter image */
+.enter-image {
+  position: absolute;
+  top: 37%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  cursor: pointer;
+  z-index: 3;
+}
+.enter-image.hidden { opacity: 0; pointer-events: none; }
+
+/* Trailer overlay (kept) */
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+.video-overlay.fade-out { opacity: 0; pointer-events: none; }
+
+/* Trailer wrapper + fade */
+.video-wrapper {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.intro-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-fade {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  background: #000;
+  z-index: 10;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+.video-fade.fade-in { opacity: 1; }
+.video-fade:not(.fade-in) { opacity: 0; }
+
+/* Audio */
+.mute-button {
+  position: absolute;
+  top: 12px; right: 16px;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--accent-cyan);
+  color: var(--accent-cyan);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.mute-button:hover {
+  background: var(--accent-cyan);
+  color: #000814;
+}
+
+/* Bottom sections */
+.sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 24px;
+  background: #000814;
+  justify-content: center;
+}
+
+.flip-card-wrapper { width: 200px; height: 200px; }
+.flip-card {
+  position: relative;
+  width: 100%; height: 100%;
+  cursor: pointer;
+}
+.flip-card.flipped {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw; height: 80vh;
+  z-index: 1000;
+}
+
+/* Card faces */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--section-bg);
+  border: 1px solid var(--accent-cyan);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+.flip-card-front { justify-content: center; }
+.flip-card-back {
+  display: none;
+  justify-content: flex-start;
+  padding: 24px;
+  box-sizing: border-box;
+}
+.flip-card.flipped .flip-card-front { display: none; }
+.flip-card.flipped .flip-card-back  { display: flex; }
+
+.flip-card h2 {
+  margin: 0 0 16px;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-neon);
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 24px; height: 24px;
+  background: #fff; color: #000;
+  border: none; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+}
+
+/* Content bodies */
+.details { width: 100%; flex: 1; overflow-y: auto; }
+
+.education-details,
+.experience-details,
+.certifications-details {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.education-details .degree,
+.experience-details .experience-item,
+.certifications-details .certification-item {
+  background: var(--bg-dark);
+  border: 1px solid var(--accent-cyan);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.degree-logo,
+.experience-logo,
+.certification-logo { width: 60px; }
+
+.experience-details .experience-item .meta,
+.certifications-details .certification-item p,
+.certifications-details .certification-item span {
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.experience-details .experience-item ul,
+.education-details .degree ul {
+  align-self: stretch;
+  text-align: left;
+  padding-left: 20px;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+/* Transparent fronts for these cards */
+.education .flip-card-front,
+.experience .flip-card-front,
+.certifications .flip-card-front,
+.about-me .flip-card-front {
+  border: none;
+  background: transparent;
+}
+
+/* About Me card sizing */
+.flip-card-wrapper.about-me {
+  width: 400px !important;
+  height: 250px !important;
+  border: none !important;
+  background: transparent !important;
+  display: inline-block;
+  position: relative;
+  left: -33px;
+}
+
+/* Links & buttons */
+a, button {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-cyan);
+  border: 1px solid var(--accent-cyan);
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+a:hover, button:hover {
+  background: var(--accent-cyan);
+  color: #000814;
+}
+
+/* ===========================
+   ABOUT IMAGE STANDARDISATION
+   (centered, equal size, smaller)
+   =========================== */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+
+.about-intro {
+  font-size: 1rem;
+  width: 100%;
+  max-width: none;
+  line-height: 1.4;
+  text-align: center; /* or justify if you prefer */
+  padding: 0 4px;   /* slight padding so it doesn’t touch edges */
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Images: consistent size & centered */
+.about-image {
+  width: 70%;
+  max-width: 500px; 
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
