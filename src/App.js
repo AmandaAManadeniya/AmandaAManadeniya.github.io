@@ -83,7 +83,7 @@ export default function App() {
       role: 'Executive Assistant',
       meta: [
         'Skill Samurai (Australia & NZ) · Part-time',
-        'July 2025 – Current · Ongoing',
+        'July 2025 – · Ongoing',
         'Sydney, New South Wales, Australia'
       ],
       bullets: [
