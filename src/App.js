@@ -60,6 +60,12 @@ export default function App() {
     {
       logo: '/assets/mq_logo.png',
       title: 'Macquarie University',
+      subtitle: 'Master of Data Science',
+      date: 'Feb 2026 - '
+    },
+    {
+      logo: '/assets/mq_logo.png',
+      title: 'Macquarie University',
       subtitle: 'Bachelor of Information Technology, Data Science',
       date: 'Jan 2020 – Nov 2023'
     },
