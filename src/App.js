@@ -61,7 +61,7 @@ export default function App() {
       logo: '/assets/mq_logo.png',
       title: 'Macquarie University',
       subtitle: 'Master of Data Science',
-      date: 'Feb 2026 - '
+      date: 'Commencing Feb 2026'
     },
     {
       logo: '/assets/mq_logo.png',
@@ -78,6 +78,21 @@ export default function App() {
   ];
 
   const experienceData = [
+    {
+      logo: '/assets/samurai_logo.png',
+      role: 'Executive Assistant',
+      meta: [
+        'Skill Samurai (Australia & NZ) · Part-time',
+        'July 2025 – Current · Ongoing',
+        'Sydney, New South Wales, Australia'
+      ],
+      bullets: [
+        'Built an automated communication pipeline for regular email correspondence and backlog tracking, improving engagement and reducing admin effort',
+        'Provided high-level operational and executive support to the franchise owner, enabling strategic focus and smoother workflows',
+        'Managed calendars, inboxes, meetings, and stakeholder correspondence, ensuring timely responses and clear priorities',
+        'Triaged enquiries and proactively resolved issues, strengthening stakeholder relationships and reducing executive interruptions'
+      ]
+    },
     {
       logo: '/assets/nine_logo.png',
       role: 'Associate Data Scientist',
